@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block begin %}
+<div class="text-uppercase">
+	<h1><u>{{member.first_name}} 's-Contacts</u></h1>
+</div>
+
+
+
+<div class="container">        
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>DOB</th>
+				<th>Gender</th>
+				<th>Email</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{%for members_contact in members_contact%}
+			<tr>
+				<td>{{members_contact.first_name}}</td>
+				<td>{{members_contact.last_name}}</td>
+				<td>{{members_contact.dob}}</td>		<td>{{members_contact.gender}}</td>
+				<td>{{members_contact.email}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<h3>
+</br></br>
+<a href="/email/member/{{ member.id }}/">Send Mail</a>
+</h3>
+<h3>
+	<a href="/contact/">Add contacts </a>
+</h3>
+<h3>
+	<a href="/import/">Import member contacts through exel file</a></br></br>
+	<a href="/export/sheet">Export member contacts to exel file</a>
+</h3>
+</br>
+
+<h1>GROUPS</h1>
+{%for group in groups %}
+<div>
+	<p><a href="/groupcontacts/group/{{ group.group_code }}/">{{group.group_name}}</a></p>
+</div>
+{% endfor %}
+
+
+{% endblock %}

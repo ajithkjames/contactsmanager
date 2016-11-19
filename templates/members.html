@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block begin %}
+<h1>USERS</h1>
+{%for member in members %}
+<div class="text-uppercase">
+	<h2><a href="/members/member/{{ member.id }}/">{{ member.first_name}}</a></h2>
+	<div class="text-uppercase">
+		<p>{{member.email}}</p>
+	</div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

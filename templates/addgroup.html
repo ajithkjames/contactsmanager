@@ -1,0 +1,77 @@
+<html>
+<body>
+
+<form method="post" action="/addgroup/">{% csrf_token %}
+<div >
+          Member *
+          <select name="member">
+          {% for member in members %} 
+                  <option value="{{ member.id }}">{{ member.first_name  }}</option>
+                 
+        {% endfor %} 
+        </select>
+        </div>
+<div>
+
+Group code<input name="group_code" type="text" />
+</div>
+<div>
+
+Group name<input name="group_name" type="text" />
+</div>
+<div>
+
+group description<input name="group_description" class="inputtext" type="date" maxlength="255" size="45" />
+</div>
+<div >
+          Gender *
+          <select name="gender">
+          
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                  <option value="2">Other</option>
+                 
+        
+        </select>
+</div>
+
+  <div class="button">
+          <input class="submitform" type="submit" name="submitform" value="SUBMIT" />
+        </div>
+
+</form> 
+
+
+
+<!-- 
+
+        <div class="subject">
+          <label class="label">Subject  <span class="required">*</span></label>
+          <input name="subject" class="inputtext" type="text" maxlength="255" size="45" />
+        </div>
+        <div class="messagesss">
+          <label class="label">Message  <span class="required">*</span></label>
+          <textarea name="message" class="inputtextarea" rows="11" cols="45"></textarea>
+        </div>
+		
+		<div >
+          Groups  *
+          <select name="groups">
+         	{% for group in groups %} 
+         	        <option value="{{ group.group_code}}">{{ group.group_name }}</option>
+         	       
+    		{% endfor %} 
+    		</select>
+        </div>
+        <div class="button">
+          <input class="submitform" type="submit" name="submitform" value="select" />
+        </div>
+
+      </form>	 -->
+
+
+
+
+
+</body>
+</html>

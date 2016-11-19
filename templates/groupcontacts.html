@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block begin %}
+{%for g in group%}
+<h1>
+{{g.group_name}}
+</h1>
+{% endfor %}
+<div class="container">        
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Email</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {%for member in members%}
+      <tr>
+        <td>{{member.first_name}}</td>
+        <td>{{member.last_name}}</td>
+        <td>{{member.dob}}</td>
+        <td>{{member.gender}}</td>
+        <td>{{member.email}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<h3>
+</br></br>
+<a href="/members/member/{{ member_id }}/"><<< BACK TO CONTACTS</a>
+</h3>
+{% endblock %}
